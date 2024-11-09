@@ -1,0 +1,94 @@
+.t-card {
+    border-radius: 8px;
+    padding: 20px;
+    margin: 0 20px;
+  }
+  .t-card__title, .t-card__testimonal-details {
+    opacity: 50%;
+  }
+  .t-card__headline {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .t-card__testimonal-details {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+  .t-card.purple {
+    color: white;
+    background: #7541c8;
+  }
+  .t-card.slate {
+    color: white;
+    background: #48556a;
+  }
+  .t-card.white {
+    color: #48556a;
+    background: white;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+  .t-card.navy {
+    color: white;
+    background: #19212e;
+  }
+  
+  .t-card__header {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+  }
+  .t-card__header img {
+    width: 25px;
+    border-radius: 50%;
+    border: 1px solid;
+    margin-right: 15px;
+  }
+  .t-card__header .t-card__name {
+    margin-bottom: 2px;
+  }
+  .t-card__header .t-card__title {
+    font-size: 10px;
+  }
+  
+  html {
+    background: #ecf2f8;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-areas: "a" "b" "c" "d" "e";
+    grid-gap: 20px;
+    margin-top: 20px;
+  }
+  .grid .a {
+    grid-area: a;
+  }
+  .grid .b {
+    grid-area: b;
+  }
+  .grid .c {
+    grid-area: c;
+  }
+  .grid .d {
+    grid-area: d;
+  }
+  .grid .e {
+    grid-area: e;
+  }
+  
+  @media (min-width: 600px) {
+    .grid {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "a a b e" "c d d e";
+      margin: 20px;
+    }
+  
+    .t-card {
+      margin: 0;
+    }
+  }
+  @media (min-width: 1200px) {
+    .grid {
+      margin: 20px 20%;
+    }
+  }

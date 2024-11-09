@@ -1,0 +1,51 @@
+body {
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: hsl(0, 0%, 10%);
+    --ray-color: hsl(59, 81%, 53%);
+    
+    & > div.wrapper {
+      width: 100%;
+      height: 100%;
+      max-height: 480px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    
+    & div.rays {
+      position: absolute;
+      width: 100%;
+      max-width: 480px;
+      aspect-ratio: 1;
+      background: conic-gradient(from 0deg, transparent 30deg, var(--ray-color) 30deg 60deg, transparent 60deg 90deg, var(--ray-color) 90deg 120deg, transparent 120deg 150deg, var(--ray-color) 150deg 180deg, transparent 180deg 210deg, var(--ray-color) 210deg 240deg, transparent 240deg 270deg, var(--ray-color) 270deg 300deg, transparent 300deg 330deg, var(--ray-color) 330deg 360deg), transparent;
+      mask: radial-gradient(white, transparent 70%);
+      border-radius: 50%;
+      overflow: hidden;
+      animation: rotateShine 30s linear infinite;
+      opacity: .05;
+      mix-blend-mode: screen;
+    }
+    
+    & div.text {
+      font-family: sans-serif;
+      font-weight: 700;
+      font-size: 48px;
+      color: #fff;
+      width: fit-content;
+      padding: 12px;
+    }
+  }
+  
+  @keyframes rotateShine {
+    0% {
+      transform: rotate(0deg);
+    }
+    
+    100% {
+      transform: rotate(360deg);
+    }
+  }

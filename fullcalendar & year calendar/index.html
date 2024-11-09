@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/js-year-calendar@latest/dist/js-year-calendar.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    />
+
+    <script src="https://unpkg.com/js-year-calendar@latest/dist/js-year-calendar.min.js"></script>
+    <script src="https://unpkg.com/js-year-calendar@latest/locales/js-year-calendar.tr.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/locales-all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row calendar-container">
+        <div class="col-10" id="external-events-all">
+          <div class="d-flex" id="external-events-list">
+            <div>
+              <span class="eventColor" style="background: #1b55e2"> </span>
+              <div
+                class="fc-event fc-daygrid-event fc-daygrid-block-event changeId"
+                style="background-color: #1b55e2"
+                data-color="#1b55e2"
+                id="4"
+                data-event='{"id:" "10", "title": "my event", color: "#1b55e2" }'
+              >
+                <div class="fc-event-main">Genel Tatil</div>
+              </div>
+            </div>
+
+            <div>
+              <span class="eventColor" style="background: #e2a03f"> </span>
+              <div
+                class="fc-event fc-daygrid-event fc-daygrid-block-event changeId"
+                style="background-color: #e2a03f"
+                data-color=" #e2a03f"
+                id="5"
+                data-event='{"title": "my event", color: "#e2a03f" }'
+              >
+                <div class="fc-event-main">İşletme Tatili</div>
+              </div>
+            </div>
+
+            <div>
+              <span class="eventColor" style="background: #235536"> </span>
+              <div
+                class="fc-event fc-daygrid-event fc-daygrid-block-event changeId"
+                style="background-color: #235536"
+                data-color=" #235536"
+                id="6"
+                data-event='{"title": "my event", color: " #235536" }'
+              >
+                <div class="fc-event-main">Yıllık Tatil</div>
+              </div>
+            </div>
+
+            <div>
+              <span class="eventColor" style="background: #e7515a"> </span>
+              <div
+                class="fc-event fc-daygrid-event fc-daygrid-block-event changeId"
+                style="background-color: #e7515a"
+                data-color="#e7515a"
+                id="7"
+                data-event='{"title": "my event", color: "#e7515a" }'
+              >
+                <div class="fc-event-main">Ücretsiz İzin</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-2 pt-2 text-right">
+          <button class="btn btn-sm btn-info" id="addNew">
+            <i class="far fa-calendar-alt mr-2"></i>Planla
+          </button>
+        </div>
+
+        <div class="col-12 d-none" id="formArea">
+          <form action="javascript:void(0);">
+            <div class="form-row justify-content-center mt-4 mx-auto">
+              <div class="form-group col-md-2 mb-0">
+                <input
+                  type="date"
+                  class="form-control border-info h-38 bg-transparent text-white"
+                  id="start-date"
+                  value="2021-02-01"
+                />
+              </div>
+              <div class="form-group col-md-2 mb-0">
+                <input
+                  type="date"
+                  class="form-control border-info h-38 bg-transparent text-white"
+                  id="end-date"
+                  value="2021-02-10"
+                />
+              </div>
+              <div class="form-group col-md-2 mb-0">
+                <select
+                  class="form-control border-info h-38 bg-transparent text-white"
+                  id="color"
+                >
+                  <option selected value="#1b55e2">Genel Tatil</option>
+                  <option value="#e2a03f">İşletme Tatili</option>
+                  <option value="#235536">Yıllık Tatil</option>
+                  <option value="#e7515a">Ücretsiz İzin</option>
+                </select>
+              </div>
+              <div class="col-xl-1 col-lg-2 col-md-1 mb-0">
+                <button type="submit" class="btn btn-info h-38 px-3" id="add-e">
+                  <i class="fas fa-save mr-2"></i> Kaydet
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-12 mt-4">
+          <div id="firstCalendar">
+            <div id="fullCalendar"></div>
+          </div>
+        </div>
+
+        <div id="secondCalendar" class="col-12 d-none">
+          <div id="calendar"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Modal -->
+    <div
+      class="modal fade"
+      id="addModal"
+      tabindex="-1"
+      aria-labelledby="addModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center" id="addModal">
+              Planlama Giriniz
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-row justify-content-center mt-4 mx-auto">
+              <div class="form-group mb-0 w-50 px-1 d-none">
+                <label for="event-title">Açıklama:</label>
+                <input
+                  type="text"
+                  class="form-control border-info h-38 bg-transparent text-white"
+                  id="event-title"
+                />
+              </div>
+
+              <div class="form-group mb-0 w-50 px-2">
+                <div class="form-group mb-0">
+                  <select
+                    class="form-control border-info h-38 bg-transparent text-white"
+                    id="event-color"
+                  >
+                    <!-- <option selected>Tatil Seçiniz...</option>-->
+                    <option selected value="#1b55e2">Genel Tatil</option>
+                    <option value="#e2a03f">İşletme Tatili</option>
+                    <option value="#235536">Yıllık Tatil</option>
+                    <option value="#e7515a">Ücretsiz İzin</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group mb-0 w-50 px-2">
+                <button
+                  type="submit"
+                  class="btn btn-outline-info h-38 px-4 w-100 d-block mx-auto"
+                  id="addNewData"
+                >
+                  <i class="fas fa-save mr-2"></i> Kaydet
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer d-none">
+            <button
+              type="button"
+              class="btn btn-danger px-5"
+              data-dismiss="modal"
+            >
+              İptal
+            </button>
+            <button
+              type="submit"
+              class="btn btn-info h-38 px-4"
+              id="addNewData"
+            >
+              <i class="fas fa-save mr-2"></i> Kaydet
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div
+      class="modal fade"
+      id="editModal"
+      tabindex="-1"
+      aria-labelledby="editModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center" id="editModal">
+              Silmek istediğinize emin misiniz?
+            </h5>
+          </div>
+          <div class="modal-body d-flex">
+            <div class="w-50 px-2 mx-auto">
+              <button
+                type="button"
+                class="btn btn-danger w-100"
+                data-dismiss="modal"
+                id="deleteData"
+              >
+                Sil
+              </button>
+            </div>
+            <div class="w-50 px-2 d-none">
+              <button
+                type="submit"
+                class="btn btn-info w-100 h-38 px-3"
+                id="editData"
+              >
+                Düzenle
+              </button>
+            </div>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+              style="position: absolute; right: 7px; top: -15px; color: #fff"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-footer p-0"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

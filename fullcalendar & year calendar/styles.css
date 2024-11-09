@@ -1,0 +1,119 @@
+
+*::-webkit-scrollbar { width: 8px; height: 8px; background-color: #eee; } 
+*::-webkit-scrollbar-track { background-color: #ccc; width:1px; border:1px solid #fff; }
+*::-webkit-scrollbar-button { display: none; }
+*::-webkit-scrollbar-thumb { background-color: rgb(0, 173, 239); } 
+body {font-size: 12px;padding: 60px 40px 40px;background-color: #000;color: #ddd;} 
+.fa-trash-alt {color: #9f0002;} 
+
+/* Colors */
+.redBackground {background-color: #9f0002 !important;}
+.redBackground2 {background-color:rgba(151, 11, 26, 0.3) !important} 
+span.redBorder, span.blueBorder {cursor: pointer; display: block;max-width: 15px;margin: auto;}
+span.redBorder {border-bottom: 2px solid #DC3544;}
+span.blueBorder {border-bottom: 2px solid rgb(0, 173, 239);}
+span.redText {color: red;}
+
+ 
+/* General Table  */
+.generalTable table, 
+.generalTable table thead th, 
+.generalTable table thead td, 
+.generalTable table tbody th {background-color: #111;font-size: 12px; color: #ddd;text-align: center;}
+.generalTable thead td, .generalTable thead th {vertical-align: middle;padding: 10px 3px;border: 1px solid #222;}
+.generalTable tbody tr:nth-of-type(2n) td {padding: 8px 3px;border: 1px solid #222;vertical-align: middle;}
+.generalTable tbody tr:nth-of-type(2n+1) td {padding: 8px 3px;border: 1px solid #282828;vertical-align: middle;} 
+.generalTable tbody tr:nth-of-type(2n):hover {background-color: #131313;} 
+.generalTable table p {margin-bottom: 0px;}
+.generalTable .table tbody+tbody {border-top-color: #222;}
+
+/*Bootstrap Modal */
+/*.modal .modal-dialog {max-height: 700px; overflow: auto;} */
+.modal-content {background-color: #1e1e1e;color: #ddd;} 
+.modal-header {border-bottom: none; padding: 1rem 1rem 0;}
+.modal-header .modal-title { font-size: 15px;}
+.modal-header,.modal-header .modal-title,.modal-header label,.modal-header button{color: #FFF !important;}
+.modal-header button {border-bottom: none; padding: 1rem 1rem 0;}
+.modal-footer {border-top: none;} 
+.modal table {color: #ddd !important;background-color: #111;font-size: 12px;} 
+.modal table td {vertical-align: middle;} /* padding: 3px;  */
+.modal table tr:hover { background-color: #1e1e1e; }
+.modal table thead tr:first-of-type:hover {background-color: #111 !important;}
+.modal .table-dark.table-striped tbody tr:nth-of-type(odd) {background-color: #111;}
+
+
+/*********     INPUT     *********************/ 
+/* Delete input arrow icon in Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {-webkit-appearance: none;margin: 0;}
+/*  Delete input arrow icon in Firefox */
+input[type=number] {-moz-appearance: textfield;}
+input[type="date"]::-webkit-calendar-picker-indicator, input[type="time"]::-webkit-calendar-picker-indicator {filter: invert(1);margin: 0; padding-top: 7px;}
+input[type="checkbox"],  input[type="radio"], .radioControlText { cursor: pointer;}
+input[type="search"].form-control hiddenInput , input[type="search"]:focus{outline: none;border-bottom: solid 1px #555;font-size: 15px;line-height: 20px;
+    padding: 8px 20px 8px 4px;max-width: 230px;min-width: 0;width: 100%;color: #ddd;-webkit-appearance: none;margin-left: 15px;}
+input:focus {outline: none !important;border: 1px solid #86b7fe !important;box-shadow: 0 0 8px #719ECE!important;}
+textarea {outline: none !important;resize: none;min-height: 38px;border-radius: 4px !important;background-color: transparent !important;}
+textarea:focus {border: 1px solid #86b7fe !important;box-shadow: 0 0 8px #719ECE!important;resize: vertical; }
+.hiddenInput, .form-control hiddenInput :disabled, .form-control hiddenInput [readonly] {height: calc(1.80rem + 2px);width:100%;padding: 0 .2rem;border-radius: 3px;
+        font-size: 12px;background-color: transparent;border: none;outline: 0;color: #ccc;text-align: center;}
+.hiddenInput:focus { border: 1px solid rgb(0, 173, 239); background: transparent;color: #FFF;}
+.transparentInput, .transparentInput:focus, .transparentInput:active {height: calc(2rem + 2px);padding: 0 .5rem;border-radius: 3px;font-size: 12px;
+            background-color: transparent;border-color: #86b7fe;outline: 0;color: #ddd;}
+ 
+
+/********* VERTICAL TEXT **************/
+.vertical {writing-mode: tb-rl;-webkit-transform: rotate(180deg);-moz-transform: rotate(180deg);-o-transform: rotate(180deg);-ms-transform: rotate(180deg);
+        transform: rotate(180deg);white-space: nowrap;}
+/********* VERTICAL TEXT **************/
+.cursor {cursor: pointer;}
+.h-38, .h-38:active {height: 38px;}
+
+option {background-color: #000;}
+
+
+/* Sayfaya Özel */
+ 
+/******  Calendar  **********/
+.calendar-container {background-color: #111;padding: 20px 8px;border-radius: 5px;} /* 010615 #2C3E4E */
+
+/* flatpickr */
+.flatpickr-calendar { z-index: 999999 !important;}
+
+/* Year Calendar */
+#firstCalendar .calendar {overflow: hidden;}
+#firstCalendar .calendar .calendar-header {margin-bottom: 40px;border-radius: 5px;;}
+#firstCalendar .calendar .months-container .month-container { height: 250px;}
+#firstCalendar .calendar .calendar-header,#calendar table td, #calendar table th, #calendar .fc-scrollgrid, #calendar .fc-list {border: 1px solid #252525;}
+#firstCalendar .calendar .calendar-header table th {font-size: 18px;}
+#firstCalendar .calendar .calendar-header table th:hover, #calendar .fc-list-event:hover td {background-color: #2C3E4E;}  /* 2C3E4E*/
+
+
+/* Full Calendar*/
+#secondCalendar #calendar .fc-button-primary {background: transparent;}
+#secondCalendar #calendar .fc-toolbar-chunk button:hover,
+#secondCalendar #calendar .fc-toolbar-chunk button {border: 1px solid #111;box-shadow: none;} 
+#secondCalendar #calendar .fc-button-active, 
+#secondCalendar #calendar .fc-toolbar-chunk > button:nth-of-type(1),
+#secondCalendar #calendar .fc-daygrid-day.fc-day-today {background: #394b5c;border-radius: 5px;}  
+#secondCalendar #calendar .fc-toolbar-chunk > button:nth-of-type(1) {text-transform: capitalize;}
+#secondCalendar #calendar .fc-list-day-cushion {background: #394b5c;}  
+#secondCalendar #calendar .fc-button-active { padding: 6px 16px;}
+#secondCalendar #calendar .fc-non-business {background: rgba(215, 215, 215, 0.05);}
+#secondCalendar #calendar .fc-bg-event {opacity: 1 }
+#secondCalendar .fc .fc-daygrid-day-top {position: absolute;z-index: 99;right: 15px; top: 3px;}
+.fc-direction-ltr .fc-daygrid-block-event:not(.fc-event-end), .fc-direction-rtl .fc-daygrid-block-event:not(.fc-event-start),
+.fc-direction-ltr .fc-daygrid-event.fc-event-end, .fc-direction-rtl .fc-daygrid-event.fc-event-start {padding: 3px;border-radius: 3px;}
+#secondCalendar .fc-theme-standard .fc-popover {border: 1px solid #444;background: #111;}
+
+/* Sürükle Bırak*/
+#external-events { padding: 25px; background: #f5f5f5;border-radius: 5px;margin-top: 50px;text-align: left;}
+#external-events h4 {font-size: 16px; padding-bottom: 0.75em;text-align: center;}
+#external-events .fc-event {margin: 3px 0;cursor: move;padding: 5px;margin: 7px 0;}
+#external-events p {margin: 1.5em 0;font-size: 11px;color: #666;}
+#external-events p input {margin: 0;vertical-align: middle;}
+#calendar-wrap {margin-left: 200px;}
+
+#external-events-all {background: transparent !important;}
+#external-events-all .fc-event {max-width: 200px;margin: 0 10px;padding: 5px 15px;color: #fff;}
+.fc-event .fc-event-main {cursor: pointer;font-size: 13px;}
